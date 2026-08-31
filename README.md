@@ -4,7 +4,18 @@ Aither Maps is a fast, responsive, mobile-first map web app designed for iPhone,
 
 ## Version
 
-**1.0.0**
+**2.0.0**
+
+## What's new in 2.0
+
+- Saved Places with local storage
+- Save a searched place directly from its map popup
+- Saved Places menu in the sidebar
+- Expanded search results
+- Improved selected-location handling
+- Map style confirmation toast
+- Updated mobile UI and version display
+- Settings and Force Update retained from v1
 
 ## Features
 
@@ -14,14 +25,15 @@ Aither Maps is a fast, responsive, mobile-first map web app designed for iPhone,
 - Satellite map style
 - Place and address search using OpenStreetMap Nominatim
 - Device location support
-- Zoom controls designed for touch screens
+- Touch-friendly zoom controls
 - Map scale control
+- Saved Places
 - Settings panel
 - System, light, and dark themes
 - Working Force Update button that clears cached app data and reloads
 - Offline app-shell caching with a service worker
 - Mobile-first layout with iPhone safe-area support
-- Installable as a standalone web app through the included web manifest
+- Installable as a standalone web app
 
 ## Run it
 
@@ -37,11 +49,22 @@ Please follow the usage policies and attribution requirements of each provider w
 
 - `index.html` — application UI and mobile metadata
 - `style.css` — responsive styling, panels, themes, and mobile layout
-- `app.js` — map setup, search, location, layers, settings, caching, and update logic
+- `app.js` — map, search, location, saved places, layers, settings, and update logic
 - `manifest.webmanifest` — install metadata
 - `sw.js` — offline application-shell service worker
 
 ## Changelog
+
+### 2.0.0 — 2026-08-31
+
+- Upgraded Aither Maps from 1.0.0 to 2.0.0.
+- Added Saved Places stored locally on the device.
+- Added a Save Place action to search-result map popups.
+- Added a Saved Places sidebar section.
+- Expanded place search results from 6 to 8.
+- Improved map marker selection behavior.
+- Added layer-change feedback.
+- Updated the README and version display.
 
 ### 1.0.0 — 2026-08-31
 

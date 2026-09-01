@@ -1,0 +1,9 @@
+{
+  "name": "aither-maps-desktop",
+  "version": "1.0.0",
+  "description": "Aither Maps desktop app",
+  "main": "main.js",
+  "scripts": {"start":"electron .","build":"electron-builder"},
+  "devDependencies": {"electron":"latest","electron-builder":"latest"},
+  "build": {"appId":"com.ogaithertech.aithermaps","productName":"Aither Maps","directories":{"output":"dist"},"win":{"target":["nsis","portable"]},"mac":{"target":"dmg"},"linux":{"target":"AppImage"}}
+}

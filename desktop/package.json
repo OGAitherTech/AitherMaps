@@ -1,9 +1,9 @@
 {
-  "name": "aither-maps-desktop",
-  "version": "1.0.0",
-  "description": "Aither Maps desktop app",
-  "main": "main.js",
-  "scripts": {"start":"electron .","build":"electron-builder"},
-  "devDependencies": {"electron":"latest","electron-builder":"latest"},
-  "build": {"appId":"com.ogaithertech.aithermaps","productName":"Aither Maps","directories":{"output":"dist"},"win":{"target":["nsis","portable"]},"mac":{"target":"dmg"},"linux":{"target":"AppImage"}}
+  "name":"aither-maps-desktop",
+  "version":"2.0.0",
+  "description":"Aither Maps desktop app",
+  "main":"main.js",
+  "scripts":{"start":"electron .","build":"electron-builder"},
+  "devDependencies":{"electron":"^38.1.0","electron-builder":"^26.0.12"},
+  "build":{"appId":"com.ogaithertech.aithermaps","productName":"Aither Maps","directories":{"output":"dist"},"files":["**/*","../index.html","../style.css","../app.js","../manifest.webmanifest","../sw.js"],"win":{"target":["nsis","portable"],"icon":"icon.ico"},"mac":{"target":"dmg"},"linux":{"target":"AppImage"}}
 }

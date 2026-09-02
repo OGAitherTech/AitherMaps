@@ -4,21 +4,19 @@ A fast, mobile-first map web app with a desktop application for Windows, macOS, 
 
 ## Version
 
-**3.3.0**
+**3.4.0**
 
-## What's new in 3.3
+## What's new in 3.4
 
-- 🖥️ Improved **Aither Maps Desktop** experience
-- 🔐 Hardened Electron security with preload/context isolation
-- 📍 Controlled desktop geolocation permission handling
-- 🔗 Safer external-link handling
-- 🔄 Dedicated Reload Map and Force Reload desktop actions
-- ⛶ Fullscreen and zoom controls from the desktop menu
-- 📦 Pinned Electron and electron-builder versions for more repeatable builds
-- 🪟 Windows NSIS + portable targets
-- 🍎 macOS DMG target
-- 🐧 Linux AppImage target
-- ⚙️ Cross-platform GitHub Actions desktop build workflow
+- 🧭 **Built-in driving navigation** now calculates routes directly inside Aither Maps
+- 📍 **Use My Location** fills the navigation starting point from the device location
+- 🔄 **Swap** start and destination with one tap
+- 🗺️ Route line is rendered directly on the Leaflet map
+- 📏 Navigation shows route distance and estimated travel time
+- 🧾 Full route-step preview with maneuver and distance details
+- 🧹 Clear the active route without reloading the app
+- 📱 Improved navigation panel for iPhone and small screens
+- 🖥️ Desktop app continues to use the same navigation interface
 
 ## Web Features
 
@@ -61,9 +59,20 @@ GitHub Actions can build the desktop packages from `.github/workflows/desktop.ym
 
 ## Navigation
 
-Aither Maps calculates driving routes inside the app using OSRM and Nominatim. Routing requires an internet connection and is subject to those services' availability and usage policies.
+Aither Maps performs driving-route calculations inside the app. It geocodes the start and destination with Nominatim, requests a driving route from OSRM, draws the returned GeoJSON route on the map, and displays distance, ETA, and route steps. Routing requires an internet connection and is subject to the OpenStreetMap, Nominatim, and OSRM services' availability and usage policies.
+
+This is route planning and step preview; it is **not** a full live turn-by-turn navigation system with continuous voice guidance.
 
 ## Changelog
+
+### 3.4.0 — 2026-09-01
+
+- Rebuilt the navigation experience as a proper in-app route planner.
+- Added device-location start selection.
+- Added start/destination swapping and route clearing.
+- Added route distance, ETA, start/end markers, and step-by-step preview.
+- Improved the navigation panel for mobile and desktop layouts.
+- Kept README version and feature documentation synchronized.
 
 ### 3.3.0 — 2026-09-01
 
@@ -81,7 +90,7 @@ Aither Maps calculates driving routes inside the app using OSRM and Nominatim. R
 
 ### 3.1.0 — 2026-08-31
 
-- Added built-in navigation and route rendering.
+- Added initial built-in navigation and route rendering.
 
 ### 3.0.0 — 2026-08-31
 

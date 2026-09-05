@@ -4,19 +4,32 @@ A fast, mobile-first map web app with a desktop application for Windows, macOS, 
 
 ## Version
 
-**3.4.0**
+**3.5.0**
 
-## What's new in 3.4
+## What's new in 3.5
 
-- 🧭 **Built-in driving navigation** now calculates routes directly inside Aither Maps
-- 📍 **Use My Location** fills the navigation starting point from the device location
-- 🔄 **Swap** start and destination with one tap
-- 🗺️ Route line is rendered directly on the Leaflet map
-- 📏 Navigation shows route distance and estimated travel time
-- 🧾 Full route-step preview with maneuver and distance details
-- 🧹 Clear the active route without reloading the app
-- 📱 Improved navigation panel for iPhone and small screens
-- 🖥️ Desktop app continues to use the same navigation interface
+- 👤 **Aither Account** creation and sign-in
+- 🔐 Account authentication is handled by **Aither Backend**
+- 🍪 Uses secure credentialed backend sessions instead of storing passwords locally
+- 🔄 Restores the signed-in session when Aither Maps opens
+- 🚪 Added account sign-out
+- 📱 Account UI is optimized for iPhone and small screens
+- 🧭 Retains the built-in navigation from 3.4
+
+## Aither Account
+
+Aither Maps connects to the Aither Backend authentication service at `https://aitherbackend.onrender.com`.
+
+Endpoints used by the app:
+
+- `POST /api/auth/register` — create an account
+- `POST /api/auth/login` — sign in
+- `GET /api/auth/session` — restore the current session
+- `POST /api/auth/logout` — sign out
+
+The frontend sends requests with credentials enabled so the backend's HttpOnly session cookie can be used. Passwords are sent only to the backend authentication endpoint and are not saved in Aither Maps local storage.
+
+The backend currently requires a name, email, and password of at least 8 characters for registration.
 
 ## Web Features
 
@@ -28,6 +41,7 @@ A fast, mobile-first map web app with a desktop application for Windows, macOS, 
 - Recent Searches
 - Built-in driving navigation
 - Route line, distance, ETA, and route-step preview
+- Aither Backend account creation, sign-in, session restore, and sign-out
 - Settings, themes, and Force Update
 - Offline application-shell caching
 - iPhone safe-area support
@@ -65,6 +79,14 @@ This is route planning and step preview; it is **not** a full live turn-by-turn 
 
 ## Changelog
 
+### 3.5.0 — 2026-09-05
+
+- Added Aither Backend-powered account creation and sign-in.
+- Added secure credentialed session restoration and sign-out.
+- Added mobile-friendly Aither Account UI.
+- Added account status and email verification status display.
+- Added dedicated `auth.js` authentication module.
+
 ### 3.4.0 — 2026-09-01
 
 - Rebuilt the navigation experience as a proper in-app route planner.
@@ -72,7 +94,6 @@ This is route planning and step preview; it is **not** a full live turn-by-turn 
 - Added start/destination swapping and route clearing.
 - Added route distance, ETA, start/end markers, and step-by-step preview.
 - Improved the navigation panel for mobile and desktop layouts.
-- Kept README version and feature documentation synchronized.
 
 ### 3.3.0 — 2026-09-01
 
